@@ -162,7 +162,7 @@ sentiment_df = pd.DataFrame({
         "Count": [positive,neutral,negative]
     })
 
-    fig_sentiment = px.bar(
+fig_sentiment = px.bar(
         sentiment_df,
         x="Sentiment",
         y="Count",
