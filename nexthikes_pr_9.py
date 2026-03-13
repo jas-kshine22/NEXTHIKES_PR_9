@@ -146,15 +146,15 @@ positive = 0
 neutral = 0
 negative = 0
 
-    for summary in summaries:
+for summary in summaries:
 
-        polarity = TextBlob(summary).sentiment.polarity
+    polarity = TextBlob(summary).sentiment.polarity
 
-        if polarity > 0:
+    if polarity > 0:
             positive += 1
-        elif polarity < 0:
+    elif polarity < 0:
             negative += 1
-        else:
+    else:
             neutral += 1
 
 sentiment_df = pd.DataFrame({
