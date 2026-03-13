@@ -1,3 +1,6 @@
 streamlit
+pandas
+plotly
+textblob
 groq
 newsapi-python
