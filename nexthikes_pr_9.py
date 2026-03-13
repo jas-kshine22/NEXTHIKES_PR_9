@@ -188,11 +188,11 @@ company_df = pd.DataFrame({
         "Mentions": list(top_companies.values())
     })
 
-    fig_company = px.bar(
-        company_df,
-        x="Company",
-        y="Mentions",
-        title="Top Companies Mentioned"
+fig_company = px.bar(
+    company_df,
+    x="Company",
+    y="Mentions",
+    title="Top Companies Mentioned"
     )
 
 insight_prompt = f"""
