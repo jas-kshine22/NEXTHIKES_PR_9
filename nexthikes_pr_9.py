@@ -172,10 +172,10 @@ fig_sentiment = px.bar(
 
 companies = []
 
-    for summary in summaries:
-        words = summary.split()
+for summary in summaries:
+    words = summary.split()
 
-        for word in words:
+    for word in words:
             if word.istitle():
                 companies.append(word)
 
