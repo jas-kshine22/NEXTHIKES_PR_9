@@ -143,8 +143,8 @@ if generate and query:
         report = generate_report(query, summaries)
 
 positive = 0
-    neutral = 0
-    negative = 0
+neutral = 0
+negative = 0
 
     for summary in summaries:
 
