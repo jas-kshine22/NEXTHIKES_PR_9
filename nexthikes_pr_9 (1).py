@@ -7,12 +7,6 @@ Original file is located at
     https://colab.research.google.com/drive/1cN2BuIzt2eAhiArM5g72GggFn7qqn8_Y
 """
 
-pip install streamlit
-
-pip install Groq
-
-pip install newsapi-python
-
 import streamlit as st
 import pandas as pd
 import plotly.express as px
