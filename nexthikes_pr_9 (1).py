@@ -117,7 +117,7 @@ def summarize_articles(articles):
 summary = response.choices[0].message.content
 summaries.append(summary)
 
-return summaries
+     return summaries
 
 def generate_report(query, summaries):
 
