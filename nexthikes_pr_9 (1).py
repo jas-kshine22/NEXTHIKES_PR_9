@@ -49,8 +49,8 @@ div[data-testid="stMetric"] {
 
 # ---------------- API KEYS ---------------- #
 
-GROQ_API_KEY = "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"
-NEWS_API_KEY = "d7a63109ca0e4418b26d38f18079370f"
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
+NEWS_API_KEY = st.secrets["NEWS_API_KEY"]
 
 client = Groq(api_key=GROQ_API_KEY)
 newsapi = NewsApiClient(api_key=NEWS_API_KEY)
