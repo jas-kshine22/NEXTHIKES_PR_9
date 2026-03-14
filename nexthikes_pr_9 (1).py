@@ -208,12 +208,12 @@ insight_prompt = f"""
     {summaries}
     """
 
-    response = client.chat.completions.create(
-        model="llama-3.1-8b-instant",
-        messages=[{"role": "user", "content": insight_prompt}]
+response = client.chat.completions.create(
+model="llama-3.1-8b-instant",
+messages=[{"role": "user", "content": insight_prompt}]
     )
 
-    insight = response.choices[0].message.content
+insight = response.choices[0].message.content
 
 tab1, tab2, tab3 = st.tabs([
         "📄 Research Report",
