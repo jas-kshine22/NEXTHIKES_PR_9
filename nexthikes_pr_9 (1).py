@@ -189,6 +189,21 @@ company_counts = Counter(companies)
 
 top_companies = dict(company_counts.most_common(10))
 
+from collections import Counter
+
+companies = []
+
+for summary in summaries:
+    words = summary.split()   # This creates the words list
+    
+    for word in words:
+        if word.istitle():
+            companies.append(word)
+
+company_counts = Counter(companies)
+
+top_companies = dict(company_counts.most_common(10))
+
 company_df = pd.DataFrame({
         "Company": list(top_companies.keys()),
         "Mentions": list(top_companies.values())
@@ -200,7 +215,19 @@ fig_company = px.bar(
         y="Mentions",
         title="Top Companies Mentioned"
     )
+company_df = pd.DataFrame(
+    top_companies.items(),
+    columns=["Company", "Mentions"]
+)
 
+fig_company = px.bar(
+    company_df,
+    x="Company",
+    y="Mentions",
+    title="Top Companies Mentioned in News"
+)
+
+st.plotly_chart(fig_company)
 insight_prompt = f"""
     Based on these news summaries about {query},
     give a short market insight.
