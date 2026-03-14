@@ -169,33 +169,32 @@ sentiment_df = pd.DataFrame({
         "Count": [positive,neutral,negative]
     })
 
-    fig_sentiment = px.bar(
+fig_sentiment = px.bar(
         sentiment_df,
         x="Sentiment",
         y="Count",
         color="Sentiment",
         title="Market Sentiment Analysis"
     )
-
 companies = []
 
-    for summary in summaries:
+for summary in summaries:
         words = summary.split()
 
-        for word in words:
-            if word.istitle():
+for word in words:
+        if word.istitle():
                 companies.append(word)
 
-    company_counts = Counter(companies)
+company_counts = Counter(companies)
 
-    top_companies = dict(company_counts.most_common(10))
+top_companies = dict(company_counts.most_common(10))
 
 company_df = pd.DataFrame({
         "Company": list(top_companies.keys()),
         "Mentions": list(top_companies.values())
     })
 
-    fig_company = px.bar(
+fig_company = px.bar(
         company_df,
         x="Company",
         y="Mentions",
